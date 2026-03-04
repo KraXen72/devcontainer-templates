@@ -11,6 +11,7 @@ RUN dnf -y upgrade \
         dnf-plugins-core \
         git \
         golang \
+        meld \
         jq \
         less \
         man-db \
