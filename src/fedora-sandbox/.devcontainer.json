@@ -32,7 +32,8 @@
   "runArgs": [
     "--cap-drop=ALL",
     "--cap-add=CHOWN",
-    "--security-opt=no-new-privileges"
+    "--security-opt=no-new-privileges",
+    "--tmpfs=/tmp:exec,mode=1777"
   ],
   "remoteUser": "vscode",
   "updateRemoteUserUID": true
