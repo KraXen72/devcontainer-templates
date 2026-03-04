@@ -21,11 +21,9 @@
     },
     "ghcr.io/devcontainers-extra/features/uv:1": {},
     "ghcr.io/devcontainers-extra/features/ripgrep:1": {},
-    "ghcr.io/eitsupi/devcontainer-features/jq-likes:2": {},
-    "ghcr.io/devcontainer-community/devcontainer-features/starship.rs:1": {}
+    "ghcr.io/eitsupi/devcontainer-features/jq-likes:2": {}
   },
   "postCreateCommand": "echo 'eval \"$(starship init bash)\"' >> /home/vscode/.bashrc && npm install -g pnpm && pnpm add -g typescript npm-check-updates degit",
-  "initializeCommand": "podman buildx inspect devcontainer-builder > /dev/null 2>&1 || podman buildx create --name devcontainer-builder --use",
   "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,Z",
   "workspaceFolder": "/workspace",
   "mounts": [],
