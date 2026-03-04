@@ -32,9 +32,6 @@
 	"remoteEnv":{
 		"PATH":"${containerEnv:PNPM_HOME}:${containerEnv:PATH}"
 	},
-	"otherPortsAttributes":{
-		"onAutoForward":"silent"
-	},
 	"runArgs":[
 		"--cap-drop=ALL",
 		"--cap-add=CHOWN",
