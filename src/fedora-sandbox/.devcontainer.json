@@ -20,16 +20,14 @@
 	    "version": "os-provided"
     },
     "ghcr.io/devcontainers-extra/features/uv:1": {},
-    "ghcr.io/devcontainers-contrib/features/ripgrep:1": {},
-    "ghcr.io/devcontainers-contrib/features/jq:1": {},
-    "ghcr.io/devcontainer-community/devcontainer-features/starship.rs:1"
+    "ghcr.io/devcontainers-extra/features/ripgrep:1": {},
+    "ghcr.io/eitsupi/devcontainer-features/jq-likes:2": {},
+    "ghcr.io/devcontainer-community/devcontainer-features/starship.rs:1": {}
   },
   "postCreateCommand": "corepack enable && corepack prepare pnpm@latest --activate && pnpm add -g typescript npm-check-updates degit",
   "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,Z",
   "workspaceFolder": "/workspace",
-  "mounts": [
-    "source=${localEnv:HOME}/.config/starship.toml,target=/home/vscode/.config/starship.toml,type=bind,readonly,Z"
-  ],
+  "mounts": [],
   "otherPortsAttributes": {
     "onAutoForward": "silent"
   },
