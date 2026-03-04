@@ -10,15 +10,13 @@ RUN dnf -y upgrade \
         git \
         golang \
         python${PYTHON_VERSION} \
-        python${PYTHON_VERSION}-pip \
+        python3-pip \
         shadow-utils \
-        sudo \
         unzip \
         xz \
     && ln -sf /usr/bin/python${PYTHON_VERSION} /usr/bin/python3 \
     && ln -sf /usr/bin/python${PYTHON_VERSION} /usr/bin/python \
-    && ln -sf /usr/bin/pip${PYTHON_VERSION} /usr/bin/pip3 \
-    && ln -sf /usr/bin/pip${PYTHON_VERSION} /usr/bin/pip \
+    && ln -sf /usr/bin/pip3 /usr/bin/pip \
     && ln -sf /usr/lib64/chromium-browser/headless_shell /usr/bin/headless_shell \
     && mkdir -p /go/bin \
     && dnf clean all

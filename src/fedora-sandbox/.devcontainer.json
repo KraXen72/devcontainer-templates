@@ -30,9 +30,11 @@
 	},
 	"runArgs":[
 		"--cap-drop=ALL",
-		"--cap-add=CHOWN",
 		"--security-opt=no-new-privileges",
-		"--tmpfs=/tmp:exec,mode=1777"
+		"--tmpfs=/tmp:exec,mode=1777",
+		"--pids-limit=2048",
+		"--ulimit=nproc=2048:2048",
+		"--ulimit=nofile=65536:65536"
 	],
 	"remoteUser":"vscode",
 	"updateRemoteUserUID":true,
