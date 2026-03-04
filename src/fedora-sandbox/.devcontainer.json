@@ -1,6 +1,6 @@
 {
 	"name":"Fedora Sandbox",
-	"image":"registry.fedoraproject.org/fedora:43",
+	"image":"ghcr.io/kraxen72/fedora-toolchain-base:latest",
 	"features":{
 		"ghcr.io/devcontainers/features/common-utils:2":{
 			"installZsh":false,
@@ -11,26 +11,19 @@
 			"userUid":"automatic",
 			"userGid":"automatic"
 		},
-		"ghcr.io/devcontainers/features/git:1":{},
 		"ghcr.io/devcontainers/features/node:1":{
 			"version":"lts",
 			"nodeGypDependencies":false
 		},
 		"ghcr.io/devcontainers-extra/features/uv:1": {},
-		"ghcr.io/devcontainers-extra/features/ripgrep:1":{},
-		"ghcr.io/kraxen72/devcontainer-features/chromium-headless:1": {},
-		"ghcr.io/kraxen72/devcontainer-features/go-minimal:1": {},
-		"ghcr.io/kraxen72/devcontainer-features/python-minimal:1": {
-			"version": "3.12"
-		},
+		"ghcr.io/devcontainers-extra/features/ripgrep:1":{}
 	},
 	"postCreateCommand":"npm install -g pnpm && pnpm add -g typescript npm-check-updates degit",
 	"workspaceMount":"source=${localWorkspaceFolder},target=/workspace,type=bind,Z",
 	"workspaceFolder":"/workspace",
 	"mounts":[],
 	"containerEnv":{
-		"PNPM_HOME":"/home/vscode/.local/share/pnpm",
-		"ROD_CHROME_BIN": "/usr/bin/headless_shell"
+		"PNPM_HOME":"/home/vscode/.local/share/pnpm"
 	},
 	"remoteEnv":{
 		"PATH":"${containerEnv:PNPM_HOME}:${containerEnv:PATH}"
