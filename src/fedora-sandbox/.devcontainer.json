@@ -22,10 +22,16 @@
     "ghcr.io/devcontainers-extra/features/uv:1": {},
     "ghcr.io/devcontainers-extra/features/ripgrep:1": {}
   },
-  "postCreateCommand": "echo 'eval \"$(starship init bash)\"' >> /home/vscode/.bashrc && npm install -g pnpm && pnpm add -g typescript npm-check-updates degit",
+  "postCreateCommand": "npm install -g pnpm && pnpm add -g typescript npm-check-updates degit",
   "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,Z",
   "workspaceFolder": "/workspace",
   "mounts": [],
+   "containerEnv": {
+    "PNPM_HOME": "/home/vscode/.local/share/pnpm"
+  },
+  "remoteEnv": {
+    "PATH": "${containerEnv:PNPM_HOME}:${containerEnv:PATH}"
+  },
   "otherPortsAttributes": {
     "onAutoForward": "silent"
   },
@@ -47,5 +53,5 @@
         "chat.tools.terminal.ignoreDefaultAutoApproveRules": true
       }
     }
-  }
+  },
 }
