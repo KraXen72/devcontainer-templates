@@ -20,8 +20,7 @@
 	    "version": "os-provided"
     },
     "ghcr.io/devcontainers-extra/features/uv:1": {},
-    "ghcr.io/devcontainers-extra/features/ripgrep:1": {},
-    "ghcr.io/eitsupi/devcontainer-features/jq-likes:2": {}
+    "ghcr.io/devcontainers-extra/features/ripgrep:1": {}
   },
   "postCreateCommand": "echo 'eval \"$(starship init bash)\"' >> /home/vscode/.bashrc && npm install -g pnpm && pnpm add -g typescript npm-check-updates degit",
   "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,Z",
