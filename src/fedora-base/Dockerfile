@@ -7,6 +7,7 @@ RUN dnf -y upgrade \
         bash-completion \
         ca-certificates \
         chromium-headless \
+        tree \
         curl \
         dnf-plugins-core \
         git \
