@@ -1,12 +1,15 @@
 {
 	"name":"Fedora Sandbox",
 	"image":"ghcr.io/kraxen72/fedora-toolchain-base:latest",
-	"postCreateCommand":"pnpm add -g typescript npm-check-updates degit @qwen-code/qwen-code @github/copilot",
+	"postCreateCommand":"pnpm add -g typescript npm-check-updates degit",
 	"workspaceMount":"source=${localWorkspaceFolder},target=/home/vscode/workspace,type=bind,Z",
 	"workspaceFolder":"/home/vscode/workspace",
 	"features": {
 		"ghcr.io/kraxen72/devcontainer-features/common-utils-bash-prompt:1": {},
-		"ghcr.io/kraxen72/devcontainer-features/pnpm:1": {}
+		"ghcr.io/kraxen72/devcontainer-features/pnpm:1": {},
+		"ghcr.io/kraxen72/devcontainer-features/copilot-cli:1": {
+			"version": "latest"
+		}
 	},
 	"mounts": [
 		"source=${localEnv:HOME}/.copilot,target=/home/vscode/.copilot,type=bind",
