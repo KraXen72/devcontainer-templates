@@ -11,7 +11,9 @@
 			"version": "latest"
 		}
 	},
-	"mounts": [],
+	"mounts": [
+		"source=${localEnv:HOME}/.copilot,target=/home/vscode/.copilot,type=bind,readonly,Z"
+	],
 	"containerEnv":{
 		"PNPM_HOME":"/home/vscode/.local/share/pnpm"
 	},
