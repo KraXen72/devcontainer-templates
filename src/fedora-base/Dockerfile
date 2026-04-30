@@ -7,30 +7,31 @@ RUN dnf -y upgrade \
         bash-completion \
         ca-certificates \
         chromium-headless \
-        tree \
         curl \
         dnf-plugins-core \
         git \
         golang \
-        meld \
         jq \
-        sqlite3 \
         less \
         man-db \
+        meld \
+        nodejs \
+        openssh-server \
         procps-ng \
         python${PYTHON_VERSION} \
         python3-pip \
         ripgrep \
         shadow-utils \
-        uv \
-        which \
+        sqlite3 \
+        tree \
         unzip \
         util-linux \
+        uv \
         wget \
+        which \
         xz \
     && dnf -y copr enable dejan/lazygit \
     && dnf -y install lazygit \
-    && dnf -y install nodejs \
     && ln -sf /usr/bin/python${PYTHON_VERSION} /usr/bin/python3 \
     && ln -sf /usr/bin/python${PYTHON_VERSION} /usr/bin/python \
     && ln -sf /usr/bin/pip3 /usr/bin/pip \
