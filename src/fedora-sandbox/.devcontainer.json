@@ -1,7 +1,7 @@
 {
 	"name":"Fedora Sandbox",
 	"image":"ghcr.io/kraxen72/fedora-toolchain-base:latest",
-	"postCreateCommand":"pnpm add -g typescript npm-check-updates degit",
+	"postCreateCommand":"pnpm add -g typescript npm-check-updates degit typescript-language-server svelte-language-server",
 	"workspaceMount":"source=${localWorkspaceFolder},target=/home/vscode/workspace,type=bind,Z",
 	"workspaceFolder":"/home/vscode/workspace",
 	"features": {
