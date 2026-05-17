@@ -12,7 +12,7 @@
 		"ghcr.io/kraxen72/devcontainer-features/ssh-zed:2": {}
 	},
 	"runArgs":[
-		"--publish=${localEnv:DCMAN_SSH_PORT}:2222",
+		"--publish=127.0.0.1:${localEnv:DCMAN_SSH_PORT}:2222",
 		"--cap-drop=ALL",
 		"--cap-add=SETUID",
 		"--cap-add=SETGID",
@@ -23,12 +23,5 @@
 		"--ulimit=nofile=65536:65536"
 	],
 	"remoteUser":"vscode",
-	"updateRemoteUserUID":true,
-	"customizations":{
-		"vscode":{
-			"settings":{
-				"chat.tools.global.autoApprove": true
-			}
-		}
-	}
+	"updateRemoteUserUID":true
 }
