@@ -1,6 +1,8 @@
 FROM ghcr.io/kraxen72/fedora-toolchain-base:latest
 
 ARG PYTHON_VERSION=3.12
+ARG VIAL_QMK_REPO=https://github.com/KraXen72/vial-qmk-legacy.git
+ARG VIAL_QMK_BRANCH=vial-avr-legacy
 
 USER root
 
@@ -51,7 +53,11 @@ RUN python3 -m pip install --no-cache-dir --upgrade pip && \
 RUN uv tool install "git+https://github.com/Nisker/vial-to-keymap.git" && \
     uv tool install keymap-drawer
 
+RUN git clone --recurse-submodules --branch "${VIAL_QMK_BRANCH}" "${VIAL_QMK_REPO}" /opt/vial-qmk-legacy && \
+    git -C /opt/vial-qmk-legacy submodule update --init --recursive && \
+    chown -R vscode:vscode /opt/vial-qmk-legacy
+
 ENV PATH="/home/vscode/.local/bin:${PATH}"
 
 USER vscode
-WORKDIR /home/vscode/workspace
+WORKDIR /opt/vial-qmk-legacy
