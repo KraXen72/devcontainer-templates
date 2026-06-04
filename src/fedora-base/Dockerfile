@@ -9,6 +9,7 @@ RUN dnf -y upgrade \
         chromium-headless \
         curl \
         dnf-plugins-core \
+        file \
         git \
         golang \
         jq \
