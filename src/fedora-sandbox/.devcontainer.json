@@ -9,6 +9,7 @@
 		"ghcr.io/kraxen72/devcontainer-features/pnpm:1": {},
 		"ghcr.io/kraxen72/devcontainer-features/codex-cli:2": { "version": "latest" },
 		"ghcr.io/kraxen72/devcontainer-features/copilot-cli:2": { "version": "latest" },
+		"ghcr.io/kraxen72/devcontainer-features/opencode-cli:1": { "version": "latest" },
 		"ghcr.io/kraxen72/devcontainer-features/ssh-zed:2": {}
 	},
 	"runArgs":[
