@@ -38,7 +38,12 @@ RUN dnf -y upgrade \
     && ln -sf /usr/bin/pip3 /usr/bin/pip \
     && ln -sf /usr/lib64/chromium-browser/headless_shell /usr/bin/headless_shell \
     && useradd -m -s /bin/bash -u 1000 vscode \
-    && mkdir -p /go/bin \
+    && install -d -o vscode -g vscode \
+        /home/vscode/.config \
+        /home/vscode/.local \
+        /home/vscode/.local/share \
+        /go/bin \
+    && chown -R vscode:vscode /home/vscode /go \
     && dnf clean all
 
 ENV GOPATH=/go
